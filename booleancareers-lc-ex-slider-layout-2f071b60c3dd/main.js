@@ -13,9 +13,7 @@ $(function (){
             $('i.active').next().addClass('active');
             $('img.active').prev().removeClass('active');
             $('i.active').prev().removeClass('active');
-        }
-
-
+        };
     });
 
     //funzione che al click da la classe active all'img precedente e la toglie a quella successiva
@@ -27,9 +25,35 @@ $(function (){
             $('i.active').prev().addClass('active');
             $('img.active').next().removeClass('active');
             $('i.active').next().removeClass('active');
-        }
+        };
     });
+    
+    //funzione che al premere del tasto freccia destra passa la classe active all'img successiva e al premere della freccia sinistra passa la classe active all'img precedente
+    $('html').keydown(function(e){
+        if(e.keyCode == 37){
+            if($('img.first').hasClass('active')){
+                $('img.first').removeClass('active') && $('img.last').addClass('active') && $('i.first').removeClass('active') && $('i.last').addClass('active');
+            }else{
+                $('img.active').prev().addClass('active');
+                $('i.active').prev().addClass('active');
+                $('img.active').next().removeClass('active');
+                $('i.active').next().removeClass('active');
+            };
+        } else if(e.keyCode == 39){
+            if($('img.last').hasClass('active')){
+                $('img.last').removeClass('active') && $('img.first').addClass('active') && $('i.last').removeClass('active') && $('i.first').addClass('active');
+            }else{
+                $('img.active').next().addClass('active');
+                $('i.active').next().addClass('active');
+                $('img.active').prev().removeClass('active');
+                $('i.active').prev().removeClass('active');
+            };
+        };
+    });
+ 
 });
+
+
         
 // Creare uno slider di immagini
 // Potete usare le immagini che desiderate.
