@@ -4,7 +4,7 @@ $(function (){
     //Variabile collegata all'icona destra
     var avanti = $('div.next i.fa-angle-right');
 
-    //funzione che al click da la classe active all'img successiva e la toglie a quella precedente
+    //funzione che al click da la classe active all'img successiva e la toglie a quella che già la possiede
     avanti.click(function(){
         if($('img.last').hasClass('active')){
             $('img.last').removeClass('active') && $('img.first').addClass('active') && $('i.last').removeClass('active') && $('i.first').addClass('active');
@@ -16,7 +16,7 @@ $(function (){
         };
     });
 
-    //funzione che al click da la classe active all'img precedente e la toglie a quella successiva
+    //funzione che al click da la classe active all'img precedente e la toglie a quella che già la possiede
     indietro.click(function(){
         if($('img.first').hasClass('active')){
             $('img.first').removeClass('active') && $('img.last').addClass('active') && $('i.first').removeClass('active') && $('i.last').addClass('active');
